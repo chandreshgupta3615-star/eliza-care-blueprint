@@ -22,13 +22,20 @@ export function Hero() {
             {hero.eyebrow}
           </span>
 
-          <h1 className="mt-5 font-display text-[2.5rem] font-extrabold leading-[1.05] tracking-tight text-balance text-foreground md:text-6xl lg:text-7xl">
+          <h1 className="mt-5 font-display text-[2.25rem] font-extrabold leading-[1.1] tracking-tight text-balance text-foreground md:text-6xl lg:text-7xl">
             Hospital-grade care,{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-primary bg-clip-text text-transparent" style={{ WebkitTextFillColor: "transparent" }}>
-                gently at home.
-              </span>
-            </span>
+            <span className="relative whitespace-nowrap text-primary">
+              gently
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 200 14"
+                className="absolute -bottom-1 left-0 w-full text-coral/70"
+                preserveAspectRatio="none"
+              >
+                <path d="M2 10 Q 50 2 100 8 T 198 6" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+              </svg>
+            </span>{" "}
+            at home.
           </h1>
 
           <p className="mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
