@@ -3,7 +3,10 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { Faq } from "@/components/home/Faq";
+import { services } from "@/content/site";
 import serviceImg from "@/assets/service-nursing.jpg";
+
+const SITE_URL = "https://elizahealthcare.in";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -12,11 +15,39 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Explore ELIZA's full range of home healthcare services — ICU nurses, elderly care, physiotherapy, doctor visits, wound care, newborn care and more across India.",
+          "Explore ELIZA's full range of home healthcare services — ICU nurses, elderly care, physiotherapy, doctor visits, wound care & newborn care across Mumbai, Pune & India.",
       },
+      {
+        name: "keywords",
+        content:
+          "home nursing services, ICU nurse home, elderly care, patient attendant, home physiotherapy, doctor visit at home, wound dressing, newborn care, home healthcare India",
+      },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "ELIZA Home Healthcare Services" },
       { property: "og:description", content: "Complete home healthcare services from certified professionals." },
       { property: "og:image", content: serviceImg },
+      { property: "og:url", content: SITE_URL + "/services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: serviceImg },
+    ],
+    links: [{ rel: "canonical", href: SITE_URL + "/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: services.map((s, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "MedicalProcedure",
+              name: s.title,
+              description: s.long,
+            },
+          })),
+        }),
+      },
     ],
   }),
   component: ServicesPage,

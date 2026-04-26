@@ -5,17 +5,28 @@ import { AppointmentForm } from "@/components/forms/AppointmentForm";
 import { Faq } from "@/components/home/Faq";
 import { business, buildWhatsAppLink } from "@/content/site";
 
+const SITE_URL = "https://elizahealthcare.in";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact ELIZA Home Healthcare | Call, WhatsApp, Email" },
+      { title: "Contact ELIZA Home Healthcare | Call, WhatsApp, Email 24×7" },
       {
         name: "description",
         content:
-          "Reach ELIZA Home Healthcare 24×7 by phone, WhatsApp or email. Coordinators respond within 30 minutes for nursing, elderly care and home medical services.",
+          "Reach ELIZA Home Healthcare 24×7 by phone, WhatsApp or email. Coordinators respond within 30 minutes for home nursing, elderly care and medical services in Mumbai, Pune & India.",
       },
+      {
+        name: "keywords",
+        content:
+          "contact home nurse, ELIZA contact, home nursing helpline, WhatsApp nurse Mumbai, 24x7 nursing contact India",
+      },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Contact ELIZA Home Healthcare" },
+      { property: "og:description", content: "Talk to a real coordinator in minutes — call, WhatsApp or email." },
+      { property: "og:url", content: SITE_URL + "/contact" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL + "/contact" }],
   }),
   component: ContactPage,
 });

@@ -6,6 +6,8 @@ import { CtaBanner } from "@/components/home/CtaBanner";
 import { aboutContent, business, cities } from "@/content/site";
 import teamImg from "@/assets/team.jpg";
 
+const SITE_URL = "https://elizahealthcare.in";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -13,11 +15,22 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "ELIZA is on a mission to make hospital-grade healthcare accessible at home. Meet the team behind 5,000+ family success stories.",
+          "ELIZA is on a mission to make hospital-grade healthcare accessible at home. Meet the team behind 5,000+ family success stories across Mumbai, Pune and India.",
       },
+      {
+        name: "keywords",
+        content:
+          "about ELIZA healthcare, home nursing company India, certified caregivers, Mumbai home nursing team, healthcare mission",
+      },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "About ELIZA Home Healthcare" },
+      { property: "og:description", content: "Compassionate, certified home healthcare across India." },
       { property: "og:image", content: teamImg },
+      { property: "og:url", content: SITE_URL + "/about" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: teamImg },
     ],
+    links: [{ rel: "canonical", href: SITE_URL + "/about" }],
   }),
   component: AboutPage,
 });
