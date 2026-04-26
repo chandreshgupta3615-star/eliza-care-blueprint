@@ -22,11 +22,12 @@ export function Hero() {
             {hero.eyebrow}
           </span>
 
-          <h1 className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-balance md:text-6xl lg:text-7xl">
-            Hospital-grade care,
-            <br />
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              gently at home.
+          <h1 className="mt-5 font-display text-[2.5rem] font-extrabold leading-[1.05] tracking-tight text-balance text-foreground md:text-6xl lg:text-7xl">
+            Hospital-grade care,{" "}
+            <span className="relative inline-block">
+              <span className="relative z-10 bg-gradient-primary bg-clip-text text-transparent" style={{ WebkitTextFillColor: "transparent" }}>
+                gently at home.
+              </span>
             </span>
           </h1>
 
