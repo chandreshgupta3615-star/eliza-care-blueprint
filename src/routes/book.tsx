@@ -4,17 +4,28 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { AppointmentForm } from "@/components/forms/AppointmentForm";
 import { business, buildWhatsAppLink } from "@/content/site";
 
+const SITE_URL = "https://elizahealthcare.in";
+
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book a Home Nurse | Same-Day Appointment | ELIZA" },
+      { title: "Book a Home Nurse Online | Same-Day Appointment | ELIZA" },
       {
         name: "description",
         content:
-          "Book ELIZA home nursing in 60 seconds. Care coordinator calls back in 30 minutes. Caregivers deployed within 2 hours.",
+          "Book ELIZA home nursing in 60 seconds. Care coordinator calls back in 30 minutes. ANM/GNM certified caregivers deployed within 2 hours across Mumbai, Pune & India.",
       },
+      {
+        name: "keywords",
+        content:
+          "book home nurse, online nurse appointment, hire home nurse Mumbai, same day nurse Pune, ICU nurse booking, elderly care booking",
+      },
+      { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Book ELIZA Home Healthcare" },
+      { property: "og:description", content: "Book a certified home nurse in 60 seconds — coordinator calls back in 30 minutes." },
+      { property: "og:url", content: SITE_URL + "/book" },
     ],
+    links: [{ rel: "canonical", href: SITE_URL + "/book" }],
   }),
   component: BookPage,
 });
