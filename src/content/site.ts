@@ -10,7 +10,7 @@ export const business = {
   fullName: "ELIZA Remote Nursing & Healthcare",
   tagline: "Hospital-grade care, gently delivered to your home.",
   shortDescription:
-    "Certified nurses, attendants, and physiotherapists for compassionate at-home medical care across India.",
+    "Certified nurses, attendants, physiotherapists and home medical equipment for compassionate at-home care across India.",
   phone: "+919876543210",
   phoneDisplay: "+91 98765 43210",
   whatsapp: "919876543210",
@@ -30,36 +30,37 @@ export const buildWhatsAppLink = (message?: string) =>
 export const nav = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
+  { label: "Equipment", to: "/equipment" },
   { label: "About", to: "/about" },
   { label: "Contact", to: "/contact" },
 ];
 
 export const hero = {
-  eyebrow: "Trusted by 5,000+ families",
+  eyebrow: "Trusted by 5,000+ Indian families",
   title: "Hospital-grade care,\ngently at home.",
   subtitle:
-    "Certified nurses, doctors, and attendants delivered to your doorstep within 2 hours — so your loved ones heal in the comfort of home.",
+    "Certified nurses, doctors, attendants and home medical equipment — so your loved ones heal in the comfort of home, surrounded by the people who love them most.",
   primaryCta: { label: "Book a Nurse Now", to: "/book" },
   secondaryCta: { label: "Talk on WhatsApp" },
   trustChips: [
     "ANM / GNM Certified",
-    "2-Hour Deployment",
     "24×7 Coordinator",
+    "Background-Verified",
     "Free Replacement",
   ],
 };
 
 export const stats = [
   { value: "5,000+", label: "Families served" },
-  { value: "2 hrs", label: "Avg. deployment" },
+  { value: "200+", label: "Trained caregivers" },
   { value: "24×7", label: "Live coordinator" },
   { value: "4.9★", label: "Family rating" },
 ];
 
 export const painPoints = [
   {
-    title: "Hospital bills draining ₹8–15K / day",
-    body: "Get the same trained care at a fraction of the cost — without compromising on quality.",
+    title: "Hospital stays drain savings",
+    body: "Get the same trained care at home — without the overheads of a hospital room.",
   },
   {
     title: "Family caregivers burning out",
@@ -83,18 +84,18 @@ export const whyUs = [
   },
   {
     icon: "Clock",
-    title: "2-Hour Deployment",
-    body: "Emergency? A trained nurse is at your door within 2 hours, day or night.",
+    title: "Rapid Response",
+    body: "A care coordinator calls you back fast and we deploy a matched caregiver as soon as possible.",
   },
   {
     icon: "HeartHandshake",
     title: "Free Replacement",
-    body: "Not the right fit? We replace your caregiver within 24 hours, no questions asked.",
+    body: "Not the right fit? We replace your caregiver promptly — no questions asked.",
   },
   {
-    icon: "Wallet",
-    title: "Transparent Pricing",
-    body: "No hidden charges. Clear daily and monthly packages tailored to your need.",
+    icon: "Stethoscope",
+    title: "Doctor-Supervised",
+    body: "Care plans reviewed by qualified physicians for medically complex cases.",
   },
   {
     icon: "Phone",
@@ -102,9 +103,9 @@ export const whyUs = [
     body: "A dedicated care manager monitors every case 24×7 — one call away.",
   },
   {
-    icon: "Stethoscope",
-    title: "Doctor-Supervised",
-    body: "Care plans reviewed by qualified physicians for medically complex cases.",
+    icon: "Truck",
+    title: "Equipment Delivered",
+    body: "Beds, oxygen, BiPAP, monitors and more — installed at home with training.",
   },
 ];
 
@@ -146,7 +147,7 @@ export const services: Service[] = [
     slug: "patient-attendant",
     icon: "User",
     title: "Patient Care Attendants",
-    short: "Affordable trained attendants for hygiene, mobility, and daily routines.",
+    short: "Trained attendants for hygiene, mobility, and daily routines.",
     long: "Patient care attendants assist with bathing, feeding, mobility, and basic daily care — perfect for non-medical support needs.",
     highlights: ["Bathing & hygiene", "Feeding support", "Mobility help"],
   },
@@ -184,21 +185,101 @@ export const services: Service[] = [
   },
 ];
 
+export type Equipment = {
+  slug: string;
+  title: string;
+  short: string;
+  long: string;
+  image: string; // import key handled in component
+  uses: string[];
+};
+
+/**
+ * Equipment list — images live in src/assets/equipment-*.jpg
+ * The component maps slug -> imported image at build time.
+ */
+export const equipment: Equipment[] = [
+  {
+    slug: "hospital-bed",
+    title: "Electric Hospital Bed",
+    short: "ICU-grade adjustable bed for safe, comfortable home recovery.",
+    long: "Multi-function electric beds with side rails, head/foot adjustment and pressure-relief mattresses — perfect for bed-ridden, post-op and elderly patients.",
+    image: "bed",
+    uses: ["Post-surgical recovery", "Bed-ridden patients", "Pressure-sore prevention"],
+  },
+  {
+    slug: "oxygen-concentrator",
+    title: "Oxygen Concentrator",
+    short: "Quiet 5L / 10L home oxygen concentrators delivered & installed.",
+    long: "Continuous oxygen therapy at home for COPD, post-COVID and respiratory patients. Fully serviced units with on-site demo and 24×7 support.",
+    image: "oxygen",
+    uses: ["COPD & asthma", "Post-COVID recovery", "Continuous O₂ therapy"],
+  },
+  {
+    slug: "bipap-cpap",
+    title: "BiPAP / CPAP Ventilator",
+    short: "Non-invasive ventilation support for sleep apnoea and respiratory failure.",
+    long: "Hospital-grade BiPAP/CPAP machines with humidifier and full mask kit — set up and titrated by a respiratory technician.",
+    image: "bipap",
+    uses: ["Sleep apnoea", "Type 2 respiratory failure", "Post-extubation"],
+  },
+  {
+    slug: "patient-monitor",
+    title: "Multi-Para Patient Monitor",
+    short: "Continuous ECG, SpO₂, NIBP and temperature monitoring at home.",
+    long: "Bedside multi-parameter monitors for ICU-at-home setups, with alarm settings and remote viewing for treating physicians.",
+    image: "monitor",
+    uses: ["Home ICU setup", "Cardiac monitoring", "High-dependency care"],
+  },
+  {
+    slug: "wheelchair",
+    title: "Folding Wheelchair",
+    short: "Lightweight, foldable wheelchairs for short or long-term mobility.",
+    long: "Standard, reclining and commode wheelchairs available — with cushioning, brakes and removable footrests for comfort and safety.",
+    image: "wheelchair",
+    uses: ["Mobility support", "Hospital visits", "Outdoor outings"],
+  },
+  {
+    slug: "walker",
+    title: "Walkers & Mobility Aids",
+    short: "Walkers, rollators and crutches for safer everyday movement.",
+    long: "Adjustable walkers, four-wheel rollators with seat, and crutches/canes — sized correctly for the patient's height and grip.",
+    image: "walker",
+    uses: ["Post-fracture", "Geriatric mobility", "Stroke rehabilitation"],
+  },
+  {
+    slug: "suction-machine",
+    title: "Suction Machine",
+    short: "Hospital-style suction units for tracheostomy and secretion clearance.",
+    long: "Quiet, foot-pedal and electric suction machines with disposable jars and catheters — essential for tracheostomy and stroke patients.",
+    image: "suction",
+    uses: ["Tracheostomy care", "Stroke patients", "Secretion clearance"],
+  },
+  {
+    slug: "nebulizer",
+    title: "Nebulizer & Respiratory Kit",
+    short: "Compact nebulizers with masks for adults and children.",
+    long: "Compressor and ultrasonic nebulizers with full kit — ideal for asthma, bronchitis and paediatric respiratory care at home.",
+    image: "nebulizer",
+    uses: ["Asthma & bronchitis", "Paediatric care", "Post-viral cough"],
+  },
+];
+
 export const howItWorks = [
   {
     step: "01",
     title: "Tell us your need",
-    body: "Book in 60 seconds via form, call, or WhatsApp — share the patient condition.",
+    body: "Book in 60 seconds via form, call, or WhatsApp — share the patient's condition.",
   },
   {
     step: "02",
     title: "Free assessment call",
-    body: "A care coordinator calls within 30 minutes to design the right care plan.",
+    body: "A care coordinator calls you back to design the right care plan for the family.",
   },
   {
     step: "03",
     title: "Caregiver at your door",
-    body: "A verified, matched caregiver arrives at your home — typically within 2 hours.",
+    body: "A verified, matched caregiver — and any equipment needed — arrives at your home.",
   },
 ];
 
@@ -212,7 +293,7 @@ export const testimonials = [
   {
     name: "Rajesh Kulkarni",
     role: "Son • Thane",
-    text: "Booked an ICU nurse at 11 PM. By 1 AM she was at our home with full equipment. Saved us a panic hospital admission.",
+    text: "Booked an ICU nurse late at night. Within hours she was at our home with full equipment. Saved us a panic hospital admission.",
     rating: 5,
   },
   {
@@ -224,7 +305,19 @@ export const testimonials = [
   {
     name: "Mohammed Khan",
     role: "Grandson • Navi Mumbai",
-    text: "Transparent pricing, no hidden costs. The attendant for my grandfather is now part of our household. Highly recommend.",
+    text: "Honest communication, no surprises. The attendant for my grandfather is now part of our household. Highly recommend.",
+    rating: 5,
+  },
+  {
+    name: "Sunita Iyer",
+    role: "Daughter-in-law • Mumbai",
+    text: "ELIZA arranged a hospital bed and oxygen concentrator the same evening we called. The setup at home felt as safe as a hospital ward.",
+    rating: 5,
+  },
+  {
+    name: "Vikram Patil",
+    role: "Son • Pune",
+    text: "The physiotherapist truly cared about my father's progress. Six weeks later, he climbs stairs again. Forever grateful.",
     rating: 5,
   },
 ];
@@ -232,27 +325,43 @@ export const testimonials = [
 export const faqs = [
   {
     q: "How quickly can a nurse reach my home?",
-    a: "For most metros, our caregivers reach you within 2 hours. For planned bookings, we deploy at your preferred date and time.",
+    a: "Once you share the patient's condition, our coordinator assesses the case and dispatches a matched caregiver as quickly as possible. Timing depends on your city, time of day and the type of care needed — for planned cases, you can book a specific date and time.",
   },
   {
     q: "Are your nurses qualified and verified?",
-    a: "Yes — every caregiver is ANM/GNM/B.Sc Nursing certified, registered with the State Nursing Council, and police-verified before deployment.",
+    a: "Yes — every caregiver is ANM / GNM / B.Sc Nursing certified, registered with the State Nursing Council, and background-verified before deployment.",
   },
   {
     q: "What if the caregiver isn't a good fit?",
-    a: "We offer free replacement within 24 hours if you're not fully satisfied — no questions, no extra charges.",
+    a: "We offer free replacement if you're not satisfied — no questions, no extra paperwork. Just call your coordinator.",
   },
   {
-    q: "How is pricing structured?",
-    a: "Transparent daily and monthly packages based on care type (12 / 24 hours, nurse / attendant / ICU). No hidden fees — share your need and we'll quote upfront.",
+    q: "Do you provide medical equipment too?",
+    a: "Yes. We deliver and install hospital beds, oxygen concentrators, BiPAP / CPAP ventilators, multi-para monitors, suction machines, wheelchairs, walkers, nebulizers and more — anywhere we serve.",
+  },
+  {
+    q: "How is pricing decided?",
+    a: "Every case is unique, so we share a transparent quote after a quick free assessment call — based on the type of care (nurse / attendant / ICU), shift length and any equipment needed. No hidden fees.",
   },
   {
     q: "Which cities do you serve?",
-    a: "We currently serve Mumbai, Thane, Navi Mumbai, Pune, and surrounding areas — and are expanding rapidly.",
+    a: "We currently serve Mumbai, Thane, Navi Mumbai, Pune, Nashik and Nagpur — and are expanding to more cities across India.",
   },
   {
     q: "Do you handle medical emergencies?",
-    a: "Our coordinator is on-call 24×7 and our nurses are trained to stabilize and escalate emergencies, coordinating with your physician or hospital.",
+    a: "Our coordinator is on-call 24×7. Our nurses are trained to stabilise patients and escalate to your physician or hospital. For life-threatening emergencies, please call 108 first.",
+  },
+  {
+    q: "Can my doctor stay involved in the care plan?",
+    a: "Absolutely. We coordinate with your treating physician and share daily nursing notes, vitals and progress updates with the family.",
+  },
+  {
+    q: "How do I pay? Are there long-term contracts?",
+    a: "We offer flexible daily, weekly and monthly options with no long-term lock-ins. You can pay online or directly to the coordinator — invoices are shared on request.",
+  },
+  {
+    q: "Is the equipment new or refurbished?",
+    a: "Equipment is sanitised, serviced and quality-checked before every deployment. New units are available on request — please ask your coordinator.",
   },
 ];
 
@@ -263,13 +372,13 @@ export const aboutContent = {
     "To make hospital-grade healthcare accessible, affordable, and human — right where people heal best: at home.",
   story: [
     "ELIZA was born from a simple, painful truth — every Indian family eventually faces a moment when a loved one needs more care than the home can provide, and the hospital feels too cold, too far, too expensive.",
-    "We built ELIZA so that families never have to choose between quality care and the comfort of home. From a small Mumbai team in 2020, we now serve thousands of families across India with verified nurses, doctors, and attendants.",
+    "We built ELIZA so that families never have to choose between quality care and the comfort of home. From a small Mumbai team in 2020, we now serve thousands of families across India with verified nurses, doctors, attendants and full home medical equipment.",
     "Every caregiver we send to your home is someone we'd send to our own.",
   ],
   values: [
     { title: "Compassion first", body: "We hire for kindness as much as skill." },
     { title: "Radical transparency", body: "Honest pricing, honest updates, always." },
-    { title: "Reliability", body: "When we say 2 hours, we mean 2 hours." },
+    { title: "Reliability", body: "When we commit, we follow through." },
     { title: "Dignity", body: "Every patient is treated like our own family." },
   ],
 };
