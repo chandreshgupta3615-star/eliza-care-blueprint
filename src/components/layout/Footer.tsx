@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { HeartPulse, Mail, Phone, MapPin, Clock, Instagram, Facebook, Linkedin } from "lucide-react";
+import { HeartPulse, Mail, Phone, MapPin, Clock, Instagram, Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
 import { business, nav, services, equipment, buildWhatsAppLink } from "@/content/site";
 
 export function Footer() {
@@ -16,15 +16,21 @@ export function Footer() {
           <p className="mt-4 text-sm text-muted-foreground max-w-xs">
             {business.shortDescription}
           </p>
-          <div className="mt-6 flex gap-3">
-            <a href={business.social.instagram} aria-label="ELIZA on Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            <a href={business.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="ELIZA on Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-transparent transition">
               <Instagram className="h-4 w-4" />
             </a>
-            <a href={business.social.facebook} aria-label="ELIZA on Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
+            <a href={business.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="ELIZA on Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-transparent transition">
               <Facebook className="h-4 w-4" />
             </a>
-            <a href={business.social.linkedin} aria-label="ELIZA on LinkedIn" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
+            <a href={business.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="ELIZA on LinkedIn" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-transparent transition">
               <Linkedin className="h-4 w-4" />
+            </a>
+            <a href={business.social.youtube} target="_blank" rel="noopener noreferrer" aria-label="ELIZA on YouTube" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-transparent transition">
+              <Youtube className="h-4 w-4" />
+            </a>
+            <a href={business.social.twitter} target="_blank" rel="noopener noreferrer" aria-label="ELIZA on Twitter / X" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground hover:border-transparent transition">
+              <Twitter className="h-4 w-4" />
             </a>
           </div>
         </div>

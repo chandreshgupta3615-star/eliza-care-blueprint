@@ -21,6 +21,8 @@ export const business = {
     instagram: "https://instagram.com",
     facebook: "https://facebook.com",
     linkedin: "https://linkedin.com",
+    youtube: "https://youtube.com",
+    twitter: "https://twitter.com",
   },
 };
 
