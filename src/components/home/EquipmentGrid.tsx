@@ -63,14 +63,15 @@ export function EquipmentGrid({ limit, withHeader = true }: { limit?: number; wi
             transition={{ duration: 0.4, delay: (i % 4) * 0.06 }}
             className="group flex flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all"
           >
-            <div className="relative aspect-[4/3] overflow-hidden bg-primary-soft/40">
+            <div className="relative aspect-[4/3] overflow-hidden bg-muted">
               <img
                 src={equipmentImages[e.image]}
                 alt={`${e.title} — home medical equipment by ELIZA`}
                 width={1024}
                 height={768}
                 loading="lazy"
-                className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                decoding="async"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
             <div className="flex flex-1 flex-col p-5">
