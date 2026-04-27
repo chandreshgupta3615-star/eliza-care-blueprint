@@ -81,12 +81,28 @@ function ContactPage() {
           <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
             <h3 className="font-display text-xl font-bold">Reach our office</h3>
             <ul className="mt-4 space-y-3 text-sm">
-              <li className="flex items-start gap-3"><MapPin className="h-4 w-4 mt-0.5 text-primary" />{business.address}</li>
-              <li className="flex items-start gap-3"><Clock className="h-4 w-4 mt-0.5 text-primary" />{business.hours}</li>
-              <li className="flex items-start gap-3"><Mail className="h-4 w-4 mt-0.5 text-primary" />{business.email}</li>
+              <li className="flex items-start gap-3"><MapPin className="h-4 w-4 mt-0.5 text-primary shrink-0" />{business.address}</li>
+              <li className="flex items-start gap-3"><Clock className="h-4 w-4 mt-0.5 text-primary shrink-0" />{business.hours}</li>
+              <li className="flex items-start gap-3"><Mail className="h-4 w-4 mt-0.5 text-primary shrink-0" />{business.email}</li>
+              <li className="flex items-start gap-3"><Phone className="h-4 w-4 mt-0.5 text-primary shrink-0" />{business.phoneDisplay}</li>
             </ul>
           </div>
-          <div className="overflow-hidden rounded-3xl shadow-card">
+
+          <div className="rounded-3xl border border-border bg-card p-6 shadow-card">
+            <h3 className="font-display text-xl font-bold">Follow ELIZA</h3>
+            <p className="mt-1.5 text-sm text-muted-foreground">
+              Care tips, family stories and updates from our nurses.
+            </p>
+            <div className="mt-5 grid grid-cols-5 gap-2.5">
+              <SocialBtn href={business.social.instagram} label="Instagram" icon={Instagram} />
+              <SocialBtn href={business.social.facebook} label="Facebook" icon={Facebook} />
+              <SocialBtn href={business.social.linkedin} label="LinkedIn" icon={Linkedin} />
+              <SocialBtn href={business.social.youtube} label="YouTube" icon={Youtube} />
+              <SocialBtn href={business.social.twitter} label="Twitter / X" icon={Twitter} />
+            </div>
+          </div>
+
+          <div className="overflow-hidden rounded-3xl shadow-card border border-border">
             <iframe
               title="ELIZA Mumbai location"
               src="https://www.google.com/maps?q=Mumbai&output=embed"
