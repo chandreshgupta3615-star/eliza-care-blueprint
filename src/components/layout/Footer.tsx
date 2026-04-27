@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { HeartPulse, Mail, Phone, MapPin, Clock, Instagram, Facebook, Linkedin } from "lucide-react";
+import { HeartPulse, Mail, Phone, MapPin, Clock, Instagram, Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
 import { business, nav, services, equipment, buildWhatsAppLink } from "@/content/site";
 
 export function Footer() {
