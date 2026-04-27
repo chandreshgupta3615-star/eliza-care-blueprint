@@ -149,3 +149,26 @@ function ChannelCard({
     </a>
   );
 }
+
+function SocialBtn({
+  href,
+  label,
+  icon: Icon,
+}: {
+  href: string;
+  label: string;
+  icon: typeof Instagram;
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`ELIZA on ${label}`}
+      title={label}
+      className="grid aspect-square place-items-center rounded-2xl border border-border bg-background text-foreground hover:bg-gradient-primary hover:text-primary-foreground hover:border-transparent hover:scale-105 transition-all"
+    >
+      <Icon className="h-5 w-5" />
+    </a>
+  );
+}
