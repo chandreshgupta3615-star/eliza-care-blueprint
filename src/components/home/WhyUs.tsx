@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Clock, HeartHandshake, Wallet, Phone, Stethoscope, type LucideIcon } from "lucide-react";
+import { ShieldCheck, Clock, HeartHandshake, Truck, Phone, Stethoscope, type LucideIcon } from "lucide-react";
 import { whyUs } from "@/content/site";
 
 const icons: Record<string, LucideIcon> = {
-  ShieldCheck, Clock, HeartHandshake, Wallet, Phone, Stethoscope,
+  ShieldCheck, Clock, HeartHandshake, Truck, Phone, Stethoscope,
 };
 
 export function WhyUs() {
   return (
-    <section className="bg-primary-soft/40 py-20 md:py-28">
+    <section className="bg-primary-soft/40 py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Why ELIZA</span>
@@ -25,7 +25,7 @@ export function WhyUs() {
                 key={w.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
                 className="rounded-3xl bg-card p-7 shadow-card hover:shadow-elevated transition-all"
               >
