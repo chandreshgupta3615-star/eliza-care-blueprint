@@ -13,7 +13,7 @@ const icons: Record<string, LucideIcon> = {
 export function ServicesGrid({ limit }: { limit?: number }) {
   const list = limit ? services.slice(0, limit) : services;
   return (
-    <section className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-28">
+    <section className="mx-auto max-w-7xl px-4 py-20 md:px-8 md:py-24">
       <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
         <div className="max-w-2xl">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-coral">Our services</span>
@@ -39,7 +39,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
               key={s.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: (i % 4) * 0.06 }}
               className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card p-6 shadow-soft hover:shadow-elevated hover:-translate-y-1 transition-all"
             >
@@ -56,12 +56,23 @@ export function ServicesGrid({ limit }: { limit?: number }) {
                   </li>
                 ))}
               </ul>
-              <Link
-                to="/book"
-                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-coral hover:gap-2 transition-all"
-              >
-                Book this care <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="mt-5 flex items-center justify-between gap-2">
+                <Link
+                  to="/services/$slug"
+                  params={{ slug: s.slug }}
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:gap-2 transition-all"
+                  aria-label={`Learn more about ${s.title}`}
+                >
+                  Learn more
+                </Link>
+                <Link
+                  to="/book"
+                  className="inline-flex items-center gap-1 text-sm font-semibold text-coral hover:gap-2 transition-all"
+                  aria-label={`Book ${s.title}`}
+                >
+                  Book <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </motion.article>
           );
         })}

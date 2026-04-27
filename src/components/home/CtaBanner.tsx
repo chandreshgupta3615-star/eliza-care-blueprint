@@ -13,10 +13,10 @@ export function CtaBanner() {
         <div className="relative grid items-center gap-8 md:grid-cols-3">
           <div className="md:col-span-2">
             <h2 className="font-display text-3xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
-              Need care today? We can be there in 2 hours.
+              Need care today? Talk to us right away.
             </h2>
             <p className="mt-3 max-w-xl text-primary-foreground/85 md:text-lg">
-              Speak to a care coordinator now — or send a quick message and we'll call you back within 30 minutes.
+              Speak to a care coordinator now — or share a few details and we'll call you back.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export function CtaBanner() {
               </a>
             </Button>
             <Button asChild variant="whatsapp" size="lg">
-              <a href={buildWhatsAppLink("Hi ELIZA, I need home care urgently.")} target="_blank" rel="noopener noreferrer">
+              <a href={buildWhatsAppLink("Hi ELIZA, I need home care.")} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="h-4 w-4" /> WhatsApp Us
               </a>
             </Button>

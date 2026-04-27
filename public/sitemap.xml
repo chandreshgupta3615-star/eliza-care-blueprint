@@ -11,6 +11,51 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://elizahealthcare.in/services/home-nursing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/icu-nurse</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/elderly-care</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/patient-attendant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/physiotherapy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/doctor-visit</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/wound-care</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/services/newborn-care</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://elizahealthcare.in/equipment</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://elizahealthcare.in/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

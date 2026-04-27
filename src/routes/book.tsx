@@ -9,20 +9,20 @@ const SITE_URL = "https://elizahealthcare.in";
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book a Home Nurse Online | Same-Day Appointment | ELIZA" },
+      { title: "Book a Home Nurse Online | Care Coordinator Callback | ELIZA" },
       {
         name: "description",
         content:
-          "Book ELIZA home nursing in 60 seconds. Care coordinator calls back in 30 minutes. ANM/GNM certified caregivers deployed within 2 hours across Mumbai, Pune & India.",
+          "Book ELIZA home nursing in 60 seconds. A care coordinator calls you back to plan certified ANM/GNM caregivers, ICU nurses or medical equipment across Mumbai, Pune & India.",
       },
       {
         name: "keywords",
         content:
-          "book home nurse, online nurse appointment, hire home nurse Mumbai, same day nurse Pune, ICU nurse booking, elderly care booking",
+          "book home nurse, online nurse appointment, hire home nurse Mumbai, nurse booking Pune, ICU nurse booking, elderly care booking, home medical equipment booking",
       },
       { name: "robots", content: "index, follow" },
       { property: "og:title", content: "Book ELIZA Home Healthcare" },
-      { property: "og:description", content: "Book a certified home nurse in 60 seconds — coordinator calls back in 30 minutes." },
+      { property: "og:description", content: "Book a certified home nurse — coordinator calls you back fast." },
       { property: "og:url", content: SITE_URL + "/book" },
     ],
     links: [{ rel: "canonical", href: SITE_URL + "/book" }],
@@ -42,13 +42,23 @@ function BookPage() {
             <h1 className="mt-3 font-display text-4xl font-bold leading-tight tracking-tight text-balance md:text-5xl">
               Care arranged in
               <br />
-              <span className="bg-gradient-primary bg-clip-text text-transparent">60 seconds.</span>
+              <span className="relative inline-block text-primary">
+                60 seconds.
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 200 14"
+                  className="absolute -bottom-1 left-0 w-full text-coral/70"
+                  preserveAspectRatio="none"
+                >
+                  <path d="M2 10 Q 50 2 100 8 T 198 6" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                </svg>
+              </span>
             </h1>
             <p className="mt-5 text-base text-muted-foreground md:text-lg">
-              Tell us a little about your patient. Our care coordinator will call you within 30 minutes — and we typically deploy a caregiver within 2 hours.
+              Tell us a little about your patient. Our care coordinator will call you back to design the right care plan and timing for your family.
             </p>
 
-            <div className="mt-8 space-y-4">
+            <div className="mt-8 space-y-3">
               <ContactRow icon={Phone} label="Call us 24×7" value={business.phoneDisplay} href={`tel:${business.phone}`} />
               <ContactRow
                 icon={MessageCircle}
@@ -95,12 +105,12 @@ function ContactRow({
 }) {
   const inner = (
     <>
-      <div className={`grid h-11 w-11 place-items-center rounded-2xl ${accent === "whatsapp" ? "bg-whatsapp text-white" : "bg-gradient-primary text-primary-foreground"} shadow-soft`}>
+      <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-2xl ${accent === "whatsapp" ? "bg-whatsapp text-white" : "bg-gradient-primary text-primary-foreground"} shadow-soft`}>
         <Icon className="h-5 w-5" />
       </div>
-      <div>
-        <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-        <div className="font-semibold">{value}</div>
+      <div className="min-w-0">
+        <div className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</div>
+        <div className="font-semibold truncate">{value}</div>
       </div>
     </>
   );

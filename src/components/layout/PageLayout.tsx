@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { WhatsAppFloat, MobileStickyCTA } from "./FloatingActions";
+import { BookingPopup } from "./BookingPopup";
 
 export function PageLayout({ children }: { children: ReactNode }) {
   return (
@@ -11,6 +12,7 @@ export function PageLayout({ children }: { children: ReactNode }) {
       <Footer />
       <WhatsAppFloat />
       <MobileStickyCTA />
+      <BookingPopup />
     </div>
   );
 }

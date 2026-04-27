@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { HeartPulse, Mail, Phone, MapPin, Clock, Instagram, Facebook, Linkedin } from "lucide-react";
-import { business, nav, services, buildWhatsAppLink } from "@/content/site";
+import { business, nav, services, equipment, buildWhatsAppLink } from "@/content/site";
 
 export function Footer() {
   return (
@@ -17,13 +17,13 @@ export function Footer() {
             {business.shortDescription}
           </p>
           <div className="mt-6 flex gap-3">
-            <a href={business.social.instagram} aria-label="Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
+            <a href={business.social.instagram} aria-label="ELIZA on Instagram" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
               <Instagram className="h-4 w-4" />
             </a>
-            <a href={business.social.facebook} aria-label="Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
+            <a href={business.social.facebook} aria-label="ELIZA on Facebook" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
               <Facebook className="h-4 w-4" />
             </a>
-            <a href={business.social.linkedin} aria-label="LinkedIn" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
+            <a href={business.social.linkedin} aria-label="ELIZA on LinkedIn" className="grid h-10 w-10 place-items-center rounded-full bg-background border border-border hover:bg-primary hover:text-primary-foreground transition">
               <Linkedin className="h-4 w-4" />
             </a>
           </div>
@@ -46,8 +46,23 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             {services.slice(0, 6).map((s) => (
               <li key={s.slug}>
-                <Link to="/services" className="hover:text-primary transition-colors">
+                <Link
+                  to="/services/$slug"
+                  params={{ slug: s.slug }}
+                  className="hover:text-primary transition-colors"
+                >
                   {s.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="mt-6 font-display text-sm font-bold uppercase tracking-wider text-foreground">Equipment</h3>
+          <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+            {equipment.slice(0, 4).map((e) => (
+              <li key={e.slug}>
+                <Link to="/equipment" className="hover:text-primary transition-colors">
+                  {e.title}
                 </Link>
               </li>
             ))}

@@ -88,15 +88,15 @@ export function Hero() {
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2.5rem] shadow-elevated">
             <img
               src={heroImg}
-              alt="ELIZA nurse caring for elderly patient at home"
+              alt="Certified ELIZA home nurse caring for an elderly patient at home in India"
               width={1600}
               height={1200}
+              fetchPriority="high"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
           </div>
 
-          {/* Floating cards */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -121,10 +121,10 @@ export function Hero() {
             className="absolute -right-2 bottom-10 max-w-[220px] rounded-2xl bg-background/95 p-3 shadow-card backdrop-blur md:-right-8 animate-float"
           >
             <div className="text-[10px] font-semibold uppercase tracking-wider text-primary">
-              Nurse deployed
+              Coordinator online
             </div>
-            <div className="mt-1 text-sm font-semibold">Mumbai • 2:14 PM</div>
-            <div className="text-[10px] text-muted-foreground">Response time: 1h 47m</div>
+            <div className="mt-1 text-sm font-semibold">24×7 callback</div>
+            <div className="text-[10px] text-muted-foreground">Mumbai • Pune • across India</div>
           </motion.div>
         </motion.div>
       </div>

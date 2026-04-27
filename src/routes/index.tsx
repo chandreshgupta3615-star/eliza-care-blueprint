@@ -5,6 +5,7 @@ import { StatsBar } from "@/components/home/StatsBar";
 import { PainPoints } from "@/components/home/PainPoints";
 import { WhyUs } from "@/components/home/WhyUs";
 import { ServicesGrid } from "@/components/home/ServicesGrid";
+import { EquipmentGrid } from "@/components/home/EquipmentGrid";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { ImageGallery } from "@/components/home/ImageGallery";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -19,16 +20,16 @@ const SITE_URL = "https://elizahealthcare.in";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ELIZA — Home Nursing Care in Mumbai, Pune & India | Book a Nurse" },
+      { title: "ELIZA — Home Nursing & Medical Equipment in Mumbai, Pune & India" },
       {
         name: "description",
         content:
-          "ELIZA delivers hospital-grade home nursing, ICU nurses, elderly care, physiotherapy and doctor visits in 2 hours. ANM/GNM certified caregivers, transparent pricing, 24×7 support across Mumbai, Thane, Navi Mumbai, Pune.",
+          "ELIZA delivers hospital-grade home nursing, ICU nurses, elderly care, physiotherapy, doctor visits and medical equipment rental across Mumbai, Thane, Navi Mumbai, Pune & India. Certified ANM/GNM caregivers, 24×7 coordinator.",
       },
       {
         name: "keywords",
         content:
-          "home nursing care, home nurse near me, ICU nurse at home, elderly care at home, patient attendant, home physiotherapy, doctor home visit, wound care at home, newborn care, home healthcare Mumbai, home nursing Pune, nursing services Thane, ANM GNM nurse, 24x7 home care India, ELIZA healthcare",
+          "home nursing care, home nurse near me, ICU nurse at home, elderly care at home, patient attendant, home physiotherapy, doctor home visit, wound care at home, newborn care, hospital bed on rent, oxygen concentrator rent, BiPAP rent, home medical equipment, home healthcare Mumbai, home nursing Pune, nursing services Thane, ANM GNM nurse, 24x7 home care India, ELIZA healthcare",
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "googlebot", content: "index, follow" },
@@ -99,6 +100,7 @@ function HomePage() {
       <StatsBar />
       <PainPoints />
       <ServicesGrid limit={8} />
+      <EquipmentGrid limit={4} />
       <WhyUs />
       <HowItWorks />
       <ImageGallery />
@@ -115,7 +117,7 @@ function HomePage() {
             Tell us what you need.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Share a few details — a care coordinator will call you within 30 minutes to design the right care plan for your family.
+            Share a few details — a care coordinator will call you back to design the right care plan for your family.
           </p>
         </div>
         <div className="md:col-span-3">
